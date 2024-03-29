@@ -4,7 +4,7 @@ import com.quangta.dto.RestaurantDto;
 import com.quangta.entity.Address;
 import com.quangta.entity.Restaurant;
 import com.quangta.entity.User;
-import com.quangta.payload.CreateRestaurantRequest;
+import com.quangta.payload.request.CreateRestaurantRequest;
 import com.quangta.repository.AddressRepository;
 import com.quangta.repository.RestaurantRepository;
 import com.quangta.repository.UserRepository;

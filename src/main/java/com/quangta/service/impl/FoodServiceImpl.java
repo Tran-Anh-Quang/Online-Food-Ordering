@@ -3,7 +3,7 @@ package com.quangta.service.impl;
 import com.quangta.entity.Category;
 import com.quangta.entity.Food;
 import com.quangta.entity.Restaurant;
-import com.quangta.payload.CreateFoodRequest;
+import com.quangta.payload.request.CreateFoodRequest;
 import com.quangta.repository.FoodRepository;
 import com.quangta.service.FoodService;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.quangta.payload;
+package com.quangta.payload.request;
 
 import com.quangta.entity.Address;
 import com.quangta.entity.ContactInformation;

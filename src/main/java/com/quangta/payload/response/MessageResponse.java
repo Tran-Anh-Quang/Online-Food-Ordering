@@ -1,4 +1,4 @@
-package com.quangta.payload;
+package com.quangta.payload.response;
 
 import lombok.Data;
 

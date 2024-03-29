@@ -3,7 +3,7 @@ package com.quangta.service;
 import com.quangta.entity.Category;
 import com.quangta.entity.Food;
 import com.quangta.entity.Restaurant;
-import com.quangta.payload.CreateFoodRequest;
+import com.quangta.payload.request.CreateFoodRequest;
 
 import java.util.List;
 

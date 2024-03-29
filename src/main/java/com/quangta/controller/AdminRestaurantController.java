@@ -2,8 +2,8 @@ package com.quangta.controller;
 
 import com.quangta.entity.Restaurant;
 import com.quangta.entity.User;
-import com.quangta.payload.CreateRestaurantRequest;
-import com.quangta.payload.MessageResponse;
+import com.quangta.payload.request.CreateRestaurantRequest;
+import com.quangta.payload.response.MessageResponse;
 import com.quangta.service.RestaurantService;
 import com.quangta.service.UserService;
 import lombok.RequiredArgsConstructor;

@@ -3,7 +3,7 @@ package com.quangta.service;
 import com.quangta.dto.RestaurantDto;
 import com.quangta.entity.Restaurant;
 import com.quangta.entity.User;
-import com.quangta.payload.CreateRestaurantRequest;
+import com.quangta.payload.request.CreateRestaurantRequest;
 
 import java.util.List;
 

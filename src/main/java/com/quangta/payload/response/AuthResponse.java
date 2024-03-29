@@ -1,4 +1,4 @@
-package com.quangta.payload;
+package com.quangta.payload.response;
 
 import com.quangta.entity.USER_ROLE;
 import lombok.Data;

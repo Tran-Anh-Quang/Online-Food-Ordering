@@ -1,9 +1,7 @@
 package com.quangta.controller;
 
 import com.quangta.entity.Food;
-import com.quangta.entity.Restaurant;
 import com.quangta.entity.User;
-import com.quangta.payload.CreateFoodRequest;
 import com.quangta.service.FoodService;
 import com.quangta.service.RestaurantService;
 import com.quangta.service.UserService;
