@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-    schedule:
-      - cron: "0 */1 * * *"
-
+  schedule:
+    - cron: "0 */1 * * *"
 
 jobs:
   build:
@@ -37,4 +36,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Food-Ordering -Dsonar.projectName='Food-Ordering'
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Food-Ordering -Dsonar.projectName="Food-Ordering"
