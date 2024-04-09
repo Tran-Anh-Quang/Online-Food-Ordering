@@ -33,6 +33,7 @@ public class FoodServiceImpl implements FoodService {
         food.setIngredients(request.getIngredients());
         food.setSeasonal(request.isSeasonal());
         food.setVegetarian(request.isVegetarian());
+        food.setNonVegetarian(request.isNonVegetarian());
         food.setCreatedDate(LocalDateTime.now());
 
         Food savedFood = foodRepository.save(food);
@@ -70,7 +71,7 @@ public class FoodServiceImpl implements FoodService {
         if (foodCategory != null && !foodCategory.isEmpty()) {
             foods = filterByCategory(foods, foodCategory);
         }
-        return null;
+        return foods;
     }
 
     private List<Food> filterByCategory(List<Food> foods, String foodCategory) {

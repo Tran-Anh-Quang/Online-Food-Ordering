@@ -29,6 +29,8 @@ public class CreateFoodRequest {
 
     private boolean vegetarian;
 
+    private boolean nonVegetarian;
+
     private boolean seasonal;
 
     private List<IngredientsItem> ingredients;
