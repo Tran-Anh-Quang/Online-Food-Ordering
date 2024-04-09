@@ -48,7 +48,12 @@ public class Restaurant {
 
     private boolean open;
 
-    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(
+            mappedBy = "restaurant",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
     @JsonIgnore
     private List<Food> foods = new ArrayList<>();
 

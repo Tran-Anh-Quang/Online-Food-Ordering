@@ -4,6 +4,8 @@ import com.quangta.entity.Category;
 import com.quangta.entity.IngredientsItem;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -15,9 +17,13 @@ public class CreateFoodRequest {
 
     private Long price;
 
+    private int quantity;
+
     private Category category;
 
     private List<String> images;
+
+    private boolean available;
 
     private Long restaurantId;
 
@@ -26,4 +32,6 @@ public class CreateFoodRequest {
     private boolean seasonal;
 
     private List<IngredientsItem> ingredients;
+
+    private LocalDateTime createdDate;
 }

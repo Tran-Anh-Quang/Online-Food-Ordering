@@ -9,6 +9,7 @@ import com.quangta.service.FoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class FoodServiceImpl implements FoodService {
 
-    private FoodRepository foodRepository;
+    private final FoodRepository foodRepository;
     @Override
     public Food createFood(CreateFoodRequest request, Category category, Restaurant restaurant) {
         Food food = new Food();
@@ -25,11 +26,14 @@ public class FoodServiceImpl implements FoodService {
         food.setRestaurant(restaurant);
         food.setDescription(request.getDescription());
         food.setImages(request.getImages());
+        food.setAvailable(request.isAvailable());
         food.setName(request.getName());
         food.setPrice(request.getPrice());
+        food.setQuantity(request.getQuantity());
         food.setIngredients(request.getIngredients());
         food.setSeasonal(request.isSeasonal());
         food.setVegetarian(request.isVegetarian());
+        food.setCreatedDate(LocalDateTime.now());
 
         Food savedFood = foodRepository.save(food);
         restaurant.getFoods().add(savedFood);
