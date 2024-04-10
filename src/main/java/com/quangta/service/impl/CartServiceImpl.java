@@ -7,7 +7,6 @@ import com.quangta.entity.User;
 import com.quangta.payload.request.AddCartItemRequest;
 import com.quangta.repository.CartItemRepository;
 import com.quangta.repository.CartRepository;
-import com.quangta.repository.FoodRepository;
 import com.quangta.service.CartService;
 import com.quangta.service.FoodService;
 import com.quangta.service.UserService;
@@ -35,6 +34,13 @@ public class CartServiceImpl implements CartService {
         Food food = foodService.getFoodById(request.getFoodId());
 
         Cart cart = cartRepository.findByCustomerId(user.getId());
+
+        if (cart == null) {
+            // Handle the case where the cart is null
+            cart = new Cart();
+            cart.setCustomer(user);
+            cart = cartRepository.save(cart);
+        }
 
         for (CartItem cartItem : cart.getItems()) {
             if (cartItem.getFood().equals(food)){
@@ -86,8 +92,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Long calculateCartTotals(Cart cart) throws Exception {
-        Long total = 0L;
+    public Long calculateCartTotals(Cart cart) {
+        long total = 0L;
 
         for (CartItem cartItem : cart.getItems()){
             total += cartItem.getFood().getPrice() * cartItem.getQuantity();
@@ -105,14 +111,14 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart findCartByUserId(Long userId) throws Exception {
+    public Cart findCartByUserId(Long userId) {
         Cart cart = cartRepository.findByCustomerId(userId);
         cart.setTotal(calculateCartTotals(cart));
         return cart;
     }
 
     @Override
-    public Cart clearCart(Long userId) throws Exception {
+    public Cart clearCart(Long userId) {
         Cart cart = findCartByUserId(userId);
 
         cart.getItems().clear();
