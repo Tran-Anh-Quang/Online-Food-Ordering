@@ -24,6 +24,6 @@ public class OrderItem {
 
     private Long totalPrice;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> ingredients;
 }

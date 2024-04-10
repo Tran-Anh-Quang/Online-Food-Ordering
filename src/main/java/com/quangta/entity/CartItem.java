@@ -27,7 +27,7 @@ public class CartItem {
 
     private int quantity;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> ingredients;
 
     private Long totalPrice;
