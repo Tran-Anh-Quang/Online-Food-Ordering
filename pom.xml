@@ -83,15 +83,15 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.12</version>
 		</dependency>
+		<dependency>
+			<groupId>com.stripe</groupId>
+			<artifactId>stripe-java</artifactId>
+			<version>24.24.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<plugin>
-        			<groupId>org.sonarsource.scanner.maven</groupId>
-       				<artifactId>sonar-maven-plugin</artifactId>
-        			<version>3.7.0.1746</version>
-      			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
