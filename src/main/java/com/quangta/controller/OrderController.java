@@ -5,7 +5,7 @@ import com.quangta.entity.User;
 import com.quangta.payload.request.OrderRequest;
 import com.quangta.payload.response.PaymentResponse;
 import com.quangta.service.OrderService;
-import com.quangta.service.PaymentService;
+//import com.quangta.service.PaymentService;
 import com.quangta.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,17 +23,17 @@ public class OrderController {
 
     private final UserService userService;
 
-    private final PaymentService paymentService;
+//    private final PaymentService paymentService;
 
     @PostMapping("/order")
-    public ResponseEntity<PaymentResponse> createOrder(
+    public ResponseEntity<Order> createOrder(
             @RequestBody OrderRequest request,
             @RequestHeader("Authorization") String jwtToken
     ) throws Exception {
         User user = userService.findUserByJwtToken(jwtToken);
         Order order = orderService.createOrder(request, user);
-        PaymentResponse paymentResponse = paymentService.createPaymentLink(order);
-        return new ResponseEntity<>(paymentResponse, HttpStatus.CREATED);
+//        PaymentResponse paymentResponse = paymentService.createPaymentLink(order);
+        return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
 
     @GetMapping("/order/user")
